@@ -1,0 +1,478 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1a1a1a; /* Default dark background */
+    color: #f0f0f0; /* Default light text */
+    line-height: 1.6;
+    transition: background-color 0.5s, color 0.5s; /* Smooth transition for mode toggle */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+/* Mode Switch Button (Positioning it in the top right corner) */
+.mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 24px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.mode-toggle:hover {
+    background-color: #ddd;
+}
+
+/* Header */
+header.main-header {
+    background: linear-gradient(90deg, #8A2BE2, #4B0082); /* Purple for dark mode */
+    color: #fff;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Header container to center everything */
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Profile image styling */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 6px solid #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Styling for the name */
+.name-container h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.name-container p {
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+/* Navigation links */
+nav {
+    background: #222;
+    text-align: center;
+    padding: 15px 0;
+}
+
+nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+nav a:hover {
+    color: #ff6347;
+}
+
+/* Sections styling */
+section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+}
+
+/* Co-Curricular and Certificates Section */
+section ul {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+}
+
+section ul li a {
+    color: #ff6347;
+}
+
+section ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Certificate Carousel Container */
+.certificate-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.certificate-box {
+    display: none; /* Initially hide all certificates */
+    flex-shrink: 0;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.certificate-image-container {
+    margin-bottom: 20px;
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border: 2px solid #fff;
+    border-radius: 10px;
+}
+
+.certificate-description {
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
+/* Navigation buttons for the carousel */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Contact form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #ff4500;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    color: #ff6347;
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #ffffff; /* Light background for light mode */
+    color: #333333; /* Dark text for light mode */
+}
+
+body.light-mode header.main-header {
+    background: linear-gradient(90deg, #ADD8E6, #87CEFA); /* Light blue for light mode */
+}
+
+body.light-mode .profile-image {
+    border: 6px solid #333;
+}
+
+body.light-mode .name-container h1 {
+    color: #000; /* Black for name in light mode */
+}
+
+body.light-mode .name-container p {
+    color: #333; /* Darker text for profession or description */
+}
+
+body.light-mode nav {
+    background-color: #4f86f7; /* Light blue background for light mode */
+}
+
+body.light-mode nav a {
+    color: #000; /* Black text for links in light mode */
+}
+
+body.light-mode nav a:hover {
+    color: #ff6347; /* Hover color for links */
+}
+
+body.light-mode footer {
+    background-color: #4f86f7; /* Light blue footer */
+}
+
+body.light-mode .social-links a {
+    color: #000; /* Darker social links in light mode */
+}
+
+body.light-mode .social-links a:hover {
+    color: #ff6347;
+}
+
+/* Skill Categories */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.skill-category {
+    margin: 20px;
+    text-align: center;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.skill-box {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    width: 120px;
+    text-align: center;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.skill-box:hover {
+    background-color: #ff6347;
+    transform: translateY(-5px);
+}
+
+.kindle-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.kindle-box {
+    display: none;
+    text-align: center;
+    max-width: 300px;
+    margin: 0 10px;
+}
+
+.kindle-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.kindle-box .book-title {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.prev-btn, .next-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    color: #007bff;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+body {
+    background-color: #121212; /* Dark mode background */
+    color: #ffffff; /* Light text for dark mode */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.project-box {
+    background-color: #1e1e1e; /* Slightly lighter for contrast */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    margin: 20px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.project-details {
+    padding: 12px;
+}
+
+.project-details h3 {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+.project-details p {
+    color: #bbbbbb;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+.github-link i {
+    margin-right: 6px;
+    font-size: 1.2em;
+}
+
+.github-link:hover {
+    background-color: #444444;
+    color: #e3e3e3;
+}
+
+.mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.mode-toggle:focus {
+    outline: none;
+}
+
+
+
+@media (min-width: 768px) {
+    .skill-box {
+        width: 150px; /* Adjust for larger screens */
+    }
+}  
