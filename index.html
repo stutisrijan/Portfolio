@@ -6,6 +6,8 @@
     <title>My Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
     <header class="main-header">
@@ -18,20 +20,21 @@
                 <p>Welcome to my personal website!</p>
             </div>
         </div>
+        
     </header>
 
+    <button class="hamburger-menu" onclick="toggleMenu()">☰</button>
+<nav id="nav-links">
+    <a href="#introduction">Introduction</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#activities">Experience</a>
+    <a href="#feedback">Contact Us</a>
     <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+    
+</nav>
 
-    <nav>
-        <a href="#introduction">Introduction</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#kindle">Kindle Reads</a>
-        <a href="#activities">Co-Curricular Activities</a>
-        <a href="#certificates">Certificates</a>
-        <a href="#skills">Skills</a>
-        <a href="#feedback">Give Feedback</a>
-    </nav>
 
     <section id="introduction">
         <h2>About Me</h2>
@@ -131,44 +134,57 @@
     </section>
     
 
-    <section id="activities">
-        <h2>Co-Curricular Activities</h2>
-        <ul>
-            <li>Volunteer for XYZ organization</li>
-            <li>Leader of the School Debate Team</li>
-            <li>Active member of the Coding Club</li>
-            <li>Member of the College Dance Troupe</li>
-        </ul>
+    <section id="activities" class="activities-container">
+        <h2>Activities</h2>
+        <div class="activity-item">
+            <h3>Secretary, NSS JIIT 62</h3>
+            <p><strong>March 2023 - Present</strong></p>
+            <p>Currently serving as a lead member of NSS JIIT 62 and acting as a bridge between student volunteers and college management.</p>
+        </div>
+        <div class="activity-item">
+            <h3>Organising Member, Esports University Conclave</h3>
+            <p><strong>April 2024 - May 2024</strong></p>
+            <p>Played a key role in organizing the Esports University Conclave by handling logistics, event coordination, and ensuring a seamless experience for participants.</p>
+        </div>
+        <div class="activity-item">
+            <h3>Subject Matter Expert, Chegg Inc.</h3>
+            <p><strong>September 2022 - Present</strong></p>
+            <p>Specializing in coding, solving students' coding questions, and providing insightful solutions.</p>
+        </div>
     </section>
+    
 
     <section id="certificates">
         <h2>Certificates</h2>
         <div class="certificate-carousel">
             <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
-
-            <div class="certificate-box">
-                <div class="certificate-image-container">
-                    <img src="image/ccertificate.jpg" alt="Certificate Name" class="certificate-image">
+    
+            <div class="carousel-inner">
+                <div class="certificate-box">
+                    <div class="certificate-image-container">
+                        <img src="image/ccertificate.jpg" alt="Certificate Name" class="certificate-image">
+                    </div>
+                    <div class="certificate-description">
+                        <h3>Certificate in [Course Name]</h3>
+                        <p>This certificate is awarded for successfully completing the [Course Name] at [Institute/Organization Name]. The course helped me develop essential skills in [Subject/Area of Expertise].</p>
+                    </div>
                 </div>
-                <div class="certificate-description">
-                    <h3>Certificate in [Course Name]</h3>
-                    <p>This certificate is awarded for successfully completing the [Course Name] at [Institute/Organization Name]. The course helped me develop essential skills in [Subject/Area of Expertise].</p>
+    
+                <div class="certificate-box">
+                    <div class="certificate-image-container">
+                        <img src="image/nss.jpg" alt="NSS Certificate" class="certificate-image">
+                    </div>
+                    <div class="certificate-description">
+                        <h3>National Service Scheme (NSS) Certificate</h3>
+                        <p>This certificate was awarded for my contribution and active participation in the National Service Scheme (NSS) program, which helped me develop a sense of social responsibility and community service.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="certificate-box">
-                <div class="certificate-image-container">
-                    <img src="image/nss.jpg" alt="NSS Certificate" class="certificate-image">
-                </div>
-                <div class="certificate-description">
-                    <h3>National Service Scheme (NSS) Certificate</h3>
-                    <p>This certificate was awarded for my contribution and active participation in the National Service Scheme (NSS) program, which helped me develop a sense of social responsibility and community service.</p>
-                </div>
-            </div>
-
+    
             <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
         </div>
     </section>
+    
 
     <section id="skills">
         <h2>Skills</h2>
@@ -283,6 +299,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 modeButton.innerHTML = '🌙';
             }
         }
+        function toggleMenu() {
+    const nav = document.getElementById('nav-links');
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+}
+
     </script>
 
     <style>
