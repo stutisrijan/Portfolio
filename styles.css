@@ -12,6 +12,17 @@ body {
     line-height: 1.6;
     transition: background-color 0.5s, color 0.5s; /* Smooth transition for mode toggle */
 }
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
 
 a {
     text-decoration: none;
@@ -260,6 +271,11 @@ footer p {
     color: #ff6347;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Light Mode Styles */
 body.light-mode {
     background-color: #ffffff; /* Light background for light mode */
@@ -468,6 +484,83 @@ body {
 .mode-toggle:focus {
     outline: none;
 }
+.education-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #333;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #f4f4f4;
+        padding: 10px;
+    }
+
+    #nav-links a {
+        margin: 10px 0;
+    }
+}
+.activities-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.activities-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.activity-item {
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    border-left: 4px solid #007BFF;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity-item h3 {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-bottom: 5px;
+}
+
+.activity-item p {
+    margin: 5px 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.activity-item strong {
+    color: #333;
+}
 
 
 
@@ -476,3 +569,34 @@ body {
         width: 150px; /* Adjust for larger screens */
     }
 }  
+@media (max-width: 768px) {
+    /* Adjust font sizes for smaller screens */
+    body {
+        font-size: 14px;
+    }
+
+    /* Stack navigation links vertically */
+    nav a {
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Adjust layout for sections */
+    .education-container, .skills-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Resize images */
+    .profile-image {
+        width: 120px;
+        height: auto;
+    }
+
+    /* Ensure certificates fit screen width */
+    .certificate-box {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
